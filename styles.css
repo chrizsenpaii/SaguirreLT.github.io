@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.navbar {
+  background-color: #FF6347;
+  overflow: hidden;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure the navbar is above other elements */
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 16px; /* Adjusted padding for better coverage */
+    text-decoration: none;
+    position: relative;
+  }
+
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: -1;
+    transition: background-color 0.5s ease-in-out; /* Added transition property */
+    pointer-events: none; /* Exclude pseudo-element from mouse events */
+  }
+  
+  .navbar a:hover::before {
+    background-color: rgba(0, 0, 0, 0.3); /* Darken background on hover */
+  }
+
+.navbar img {
+  margin-left: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  float: left;
+  height: 50px;
+  width: 50px;
+  transition: transform 0.5s ease-in-out; /* Added transition property */
+}
+
+.navbar img:hover {
+  transform: scale(1.2); /* Increase scale on hover */
+  animation: pulsate 1.5s infinite; /* Added pulsating animation */
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.navbar a i {
+  font-size: 2rem!important;
+  transition: transform 0.5s ease-in-out; /* Added transition property */
+}
+
+.navbar a i:hover {
+  transform: scale(1.2); /* Increase scale on hover */
+  animation: enlarge 0.5s; /* Added keyframe animation */
+}
+
+@keyframes enlarge {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 14px 16px;
+}
+
+.search-container input[type=text] {
+  width: 400px;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 20px;
+  font-size: 17px;
+  border: none;
+  background-image: url(search.png);
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.left-sidebar,
+.right-sidebar {
+  position: fixed;
+  top: 60px; /* Adjusted to the height of the navbar */
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.left-sidebar {
+  left: 0;
+  width: 200px;
+  padding: 60px 1.7rem 20px; /* Adjusted padding for better visibility */
+  color: aliceblue;
+  background-color: #ffb703;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-sidebar img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.right-sidebar {
+  right: 0;
+  width: 150px;
+  padding: 60px 1.7rem 20px; /* Adjusted padding for better visibility */
+  color: aliceblue;
+  background-color: blueviolet;
+}
+
+.right-sidebar:hover {
+  width: 240px;
+  transition: 0.5s;
+}
+
+.main-content {
+  margin-top: 60px; /* Adjusted to the height of the navbar */
+  margin-left: 200px; /* Adjusted to the width of the left sidebar */
+  margin-right: 150px; /* Adjusted to the width of the right sidebar */
+}
+
+.comment-section {
+  padding: 10px;
+}
+
+.comment-section input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-section button {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+#name {
+  color: black;
+  font-size: 30px;
+}
+
+#random {
+  color: black;
+  font-size: 15px;
+}
+
+.right-sidebar h3 {
+  align-content: center;
+  text-align: center;
+}
+
+.right-sidebar i {
+  color: #32CD32;
+  font-size: 10px;
+  margin-right: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+/* Add more styles as needed */
